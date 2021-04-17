@@ -1,0 +1,8 @@
+/artifacts
+/contracts/artifacts
+/build
+/coverage
+/coverage.json
+/.coverage_contracts
+/.coverage_artifacts
+/cache
