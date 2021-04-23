@@ -1,0 +1,24 @@
+.App {
+  background-image: url("images/rink.png");
+  background-size: cover;
+  min-height: 90vh;
+  /* max-height: 100vh; */
+  /* min-width: 100%; */
+  max-width: 100%;
+  text-align: center;
+}
+
+button {
+  margin: 4px;
+  padding: 3px 12px;
+  font-size: 12pt;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+table {
+  margin: auto;
+}

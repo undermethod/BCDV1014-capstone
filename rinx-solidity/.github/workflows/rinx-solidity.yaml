@@ -1,0 +1,59 @@
+# placeholder - in progress
+name: Rinx Install, Compile and Test
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+jobs:
+  install-compile-test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [15.14.0]
+    steps:
+      - uses: actions/fetch
+      - name: Install
+        run: npm i
+      - name: Compile
+        run: truffle compile
+      - name: Test
+        run: truffle test
+    
+    # env:
+    #   MNEMONICS: ${{ secrets.MNEMONICS }}
+    #   INFURA_KEY: ${{ secrets.INFURA_KEY }}
+    #   SKIP_PREFLIGHT_CHECK: true
+
+    # steps:
+    #   - name: Checkout Use Node.js ${{ matrix.node-version }}
+    #     uses: actions/checkout@v2
+      
+    #   - name: Install
+    #     run: |
+    #       cd ./survey-marketplace-truffle && yarn
+    #   - name: Lint
+    #     run: |
+    #       cd ./survey-marketplace-truffle && yarn lint
+    #   - name: Test
+    #     run: |
+    #       cd ./survey-marketplace-truffle && yarn test
+    #   - name: Ropsten deploy 
+    #     if: github.ref == 'refs/heads/master'
+    #     run: |
+    #       cd ./survey-marketplace-truffle && yarn ropsten-deploy
+    #   - name: Build
+    #     run: |
+    #       cd ./survey-marketplace-truffle/app && yarn
+    #       yarn build
+    #   - name: GH Pages Deploy
+    #     if: github.ref == 'refs/heads/master'
+    #     uses: JamesIves/github-pages-deploy-action@3.5.9
+    #     with:
+    #       ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+    #       BASE_BRANCH: master
+    #       BRANCH: gh-pages
+    #       FOLDER: survey-marketplace-truffle/app/build
+    #       CLEAN: true
