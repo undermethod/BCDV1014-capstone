@@ -1,6 +1,8 @@
 # BCDV1014 dApp II - Capstone Project
 ## Shaun Lerner 101290912 - Rinx Blockchain Betting Pools
 
+<em>Note: ".env" files would normally be included in "/.gitignore" file, and excluded from repo. Added here as mock files for student project.</em>
+
 ### Installation instructions
 1. Spin up local blockchain using "ganache-cli -d" or equivalent
 1. Optionally:
